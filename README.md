@@ -1,79 +1,45 @@
-# Install needed stuf
-npm install --save-dev hardhat
-npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers @openzeppelin/hardhat-upgrades @openzeppelin/contracts hardhat-abi-exporter hardhat-abi-exporter
+# 🐌 SlimeShadies NFT Project
 
-# Ustvari projekt
-npx hardhat
+Welcome to **SlimeShadies** — a collection of 10,000 uniquely generated snail-themed NFTs that slithered onto the Avalanche blockchain!
 
-# Compile contracts
-npx hardhat compile
+## 🧬 About the Project
 
-# Run contract test
-npx hardhat test
+SlimeShadies began as an experimental NFT collection designed to showcase creativity, technical depth, and community-first commitment. Every snail was randomly generated from a pool of hand-crafted traits, ensuring each one is as quirky and unique as the next.
 
-# Run script
-npx hardhat run scripts/sample-script.js
+Half of the collection was sold out during the initial launch. While the original roadmap milestones required a full sellout for further development, the SlimeShadies team believed in delivering more than just promises — so we went ahead and built the ecosystem anyway.
 
-# Run script with local node
-npx hardhat run scripts/sample-script.js --network localhost
+---
 
-# Run script with test bscnode
-npx hardhat run --network bsctestnet scripts/sample-script.js
+## 🚀 Features & Milestones
 
-# Slime Shadies Contracts
-# Slime Shadies Contracts
-# Slime Shadies Contracts
+Despite challenges, SlimeShadies delivered a complete and evolving ecosystem:
 
-Flatten contract
-- npx hardhat flatten contracts/NFT_Minter.sol > NFT_Minter_Flatten.sol
+### ✅ **NFT Staking**
+Holders can stake their snails and earn passive rewards in the form of our utility token, `$SHADY`.
 
-TESTNET: 
-- npx hardhat run --network avaxtestnet scripts/create-account.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/deploy-nft-collection.js
----- SET TESTNET_NFT_COLLECTION -----
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/deploy-main-minter.js
----- SET TESTNET_MAIN_MINTER ------
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/set-main-minter.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/deploy-shady-token.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/deploy-nft-staking.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/shady-token-set-staking-address.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/collection-set-staking-address.js
+### 💰 **$SHADY Token**
+A utility token designed to power the SlimeShadies ecosystem, enabling staking rewards, game participation, and future upgrades.
+
+### 🎟️ **On-Chain Lottery**
+A fully self-developed lottery system was introduced to reward the community. Due to limited resources, the lottery uses **pseudo-random number generation** (PRNG) instead of VRF-based true randomness, but still remains provably fair and transparent.
+
+### 🐌💨 **Racing Game**
+An NFT-powered racing game where your SlimeShadies snails can compete for prizes and bragging rights! Just like the lottery, the game’s outcome is determined via pseudo-random mechanics for efficient, on-chain results.
+
+---
+
+## ⚙️ Smart Contract Architecture
+
+The SlimeShadies smart contracts were designed with flexibility and future-proofing in mind:
+
+- **Minter Contract Separation**  
+  The minting logic was decoupled from the core NFT contract, allowing seamless extensions and upgrades.
   
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster1-deploy-minter.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster1-set-authorized-address.js
-  
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster2-deploy-minter.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster2-set-authorized-address.js
-  
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster3-deploy-minter.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster3-set-authorized-address.js
+- **NFT Extensions & Boosters**  
+  This design allowed us to introduce **NFT Boosters** — add-on metadata or utility items for your snails — as well as **1/1 Special NFTs** that were distributed as rewards for community events and Discord competitions.
 
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster4-deploy-minter.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/booster4-set-authorized-address.js
+---
 
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/deploy-racing-game.js
-- npx hardhat run --network avaxtestnet scripts/deploy/testnet/deploy-lottery.js
+## 💚 Community First
 
-MAINNET:
-- npx hardhat run --network avaxmainnet scripts/create-account.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/deploy-nft-collection.js
----- SET MAINNET_NFT_COLLECTION -----
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/deploy-main-minter.js
----- SET MAINNET_MAIN_MINTER ------
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/set-main-minter.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/deploy-shady-token.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/deploy-nft-staking.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/shady-token-set-staking-address.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/collection-set-staking-address.js
-# BOOSTER 1
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/booster_1_xsalad/booster1-deploy-minter.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/booster_1_xsalad/booster1-set-authorized-address.js
-# BOOSTER 2
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/booster_2_mushroom_11001_11300/booster2-deploy-minter.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/booster_2_mushroom_11001_11300/booster2-set-authorized-address.js
-# BOOSTER 3
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/booster_3_magnet_11301_11301/booster3-deploy-minter.js
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/booster_3_magnet_11301_11301/booster3-set-authorized-address.js
-
-# RACING GAME
-- npx hardhat run --network avaxmainnet scripts/deploy/mainnet/deploy-racing-game.js
+From the very beginning, SlimeShadies was built around a dedicated community. Even without reaching initial funding goals, we delivered beyond the roadmap, driven by creativity, passion, and the support of our holders.
